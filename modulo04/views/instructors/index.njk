@@ -1,0 +1,43 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="card">
+  <section
+    class="avatar"
+    style="background: url(https://source.unsplash.com/collection/3465564/500x500) no-repeat center center / cover">
+    {# não aponta para uma imagem, mas para uma coleção de imagens. 500x500 é o tamanho
+    que quero das imgs#}
+  </section>
+
+  <section class="details">
+
+    <h3>Detalhes</h3>
+    
+    <div class="item">
+      <div>Instrutor</div>
+      <div>Edson Arantes</div>
+    </div>
+    <div class="item">
+      <div>Idade</div>
+      <div>80</div>
+    </div>
+    <div class="item">
+      <div>Sexo</div>
+      <div>Masculino</div>
+    </div>
+    <div class="item">
+      <div>Acompanhamento</div>
+      <div>
+        <span>Musculação</span>
+        <span>Crossfit</span>
+      </div>
+    </div>
+    <div class="item">
+      <div>Desde</div>
+      <div>01/01/0001</div>
+    </div>  
+  </section>
+
+</div>
+
+{% endblock content %}

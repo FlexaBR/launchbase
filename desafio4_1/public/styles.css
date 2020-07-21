@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400, 700&display=swap');
+
+:root {
+  --color-green: #50fa7b;
+  --color-rocket: #7159c1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  background-color: var(--color-rocket);
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: white;
+  padding: 32px;  
+  width: 100%;
+  /* com o padding, css não respeita o width: 100%, então o border-box
+    faz com que o elemento fique no limite da largura */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.links {
+  font-size: 22px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #777;
+  position: relative; /* uso o relative no pai para o filho ficar com o
+  absolute em relação ao pai, se não fica em relação ao root */
+}
+
+.links a + a {
+  margin-left: 32px;
+}
+
+.links a.active {
+  font-weight: bold;
+  color: var(--color-rocket);
+}
+
+.links a:hover {
+  color: var(--color-rocket);
+}
+
+.links a::after {
+  content: ""; /* pseudo elementos sempre precisam de um content */
+  width: 0;
+  height: 2px;
+  background-color: var(--color-rocket);
+  position: absolute; /* em relação ao pai q tem o relative */
+  left: 0; /* posso usar já  tem o absolute */
+  bottom: -4px;
+}
+
+.links a:hover::after {
+  width: 100%;
+  transition: width 200ms ease-in-out; /* tem diversas propriedades, na dúvida
+  sobre qual, usar o all. Para consulta e simulação: site MDN.
+  Transition tem 4 propriedades: 1. onde aplica; 2. duração;
+  3. timing (se percorre rápido ou lento, no caso, começa rápido e termina
+  lento); 4. delay. Acima está sem delay */
+}
